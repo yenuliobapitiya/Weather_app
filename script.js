@@ -1,6 +1,6 @@
-// const apiKey = "78ae816692243d278ad32abc37245419";
+const apiKey = "78ae816692243d278ad32abc37245419";
 // const apiUrl = "https://home.openweathermap.org/api_keys";
-const apiKey = "7d5e74e7b112e34001dc87b79a2fc7c3";
+// const apiKey = "7d5e74e7b112e34001dc87b79a2fc7c3";
 const apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const searchBox = document.querySelector(".search input")
@@ -21,6 +21,7 @@ async function checkWeather(city) {
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
         document.querySelector(".humidity").innerHTML = data.winds.speed + "km/h";
 
+        consolele.log(data.weather[0].main);
         if(data.weather[0].main == "Clouds") {
             weatherIcon.src = "images/clouds.png";
         }
