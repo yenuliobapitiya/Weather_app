@@ -13,13 +13,12 @@ async function checkWeather(city) {
     if(response.status == 404) {
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
-    }
-    else{
+    }else{
         var data = await response.json();
 
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "*C";
-        document.querySelector(".humidity").innerHTML = data.winds.speed + "km/h";
+        document.querySelector(".humidity").innerHTML = data.wind.speed + "km/h";
 
         consolele.log(data.weather[0].main);
         if(data.weather[0].main == "Clouds") {
